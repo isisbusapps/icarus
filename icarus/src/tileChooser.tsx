@@ -11,7 +11,7 @@ import SchedulerTile from './assets/SchedulerTile.png';
 import VisitsTile from './assets/VisitsTile.png';
 
 
-const TileChooser = () => {
+const TileChooser = ({data, setCategory}) => {
   // All supported apps - tile layout
   const faseApps = [
     'ISIS Proposals',
@@ -40,18 +40,17 @@ const TileChooser = () => {
     'Experiment Reports': ExperimentReportsTile
   };
 
-  const [val, setVal] = React.useState('');
-
   const handleChange = (e) => {
 
-    console.log('Click');
-
-    //get the clicked app name
+    //get the clicked app name and therefore the category
     const newValue = e.target.textContent;
-    setVal(newValue);
-    
+
+    const docListDisplay = document.getElementById('docListPane');
+
+    setCategory(newValue);
+
     //show the document library and load correct contents
-      document.getElementById('documentList').style.display="block";
+      docListDisplay.style.display="block";
       console.log("Triggered open the document Library with " + newValue);
     };
 

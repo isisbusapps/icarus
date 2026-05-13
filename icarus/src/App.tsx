@@ -10,6 +10,7 @@ import './globals.css'
 
 function App() {
   const [data, setData] = useState([]);
+  const [selectedCategory, setCategory] = useState("ISIS Proposal");
 
   return (
     <>
@@ -27,15 +28,15 @@ function App() {
       </section>
 
       <section>
-        <TileChooser />
+        <TileChooser data={data} setCategory={setCategory}/>
       </section>
 
       <section>
         <DocLoader data={data} setData={setData}/>
       </section>
 
-      <section id='documentList'>
-        <DocumentList />
+      <section id='docListPane'>
+        <DocumentList data={data} selectedCategory={selectedCategory} />
       </section>
 
     <section>
