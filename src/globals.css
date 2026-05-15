@@ -1,12 +1,3 @@
-@import "tailwindcss";
-
-
-@theme {
-    --color-brand-primary: #ff9d1b;
-    --color-brand-bright-blue: #205CFC;
-    --color-brand-dark-blue: #003088;
-}
-
 html, body {
     height: 100%;
     margin: 0;
